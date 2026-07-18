@@ -1,14 +1,3 @@
----
-title: Protein Database RAG
-emoji: 🧬
-colorFrom: blue
-colorTo: green
-sdk: gradio
-sdk_version: "6.20.0"
-app_file: app.py
-pinned: false
----
-
 # 🧬 Protein Database Text-to-SQL
 
 [![Open in Spaces](https://huggingface.co/datasets/huggingface/badges/resolve/main/open-in-hf-spaces-md.svg)](https://huggingface.co/spaces/RohanRamesh/proteinRAG)
