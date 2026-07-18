@@ -1,0 +1,4 @@
+-r requirements.txt
+biopython>=1.83
+requests>=2.32
+pytest>=8.0

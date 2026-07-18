@@ -1,146 +1,81 @@
-import streamlit as st
 import os
-from langchain_core.prompts import ChatPromptTemplate
-from langchain_community.utilities import SQLDatabase
-from langchain_core.output_parsers import StrOutputParser
-from langchain_core.runnables import RunnablePassthrough
-from langchain_huggingface import HuggingFaceEndpoint
-from langchain_community.llms import LlamaCpp
 
-# Page config
-st.set_page_config(page_title="Protein Database RAG", layout="wide")
-st.title("Protein Database Query System")
+import gradio as gr
+import pandas as pd
+import spaces
+from dotenv import load_dotenv
 
-# Initialize session state for API token
-if 'huggingface_api_token' not in st.session_state:
-    st.session_state.huggingface_api_token = None
+from db.connection import get_schema, run_select
+from rag.answer_chain import generate_answer
+from rag.sql_chain import generate_sql
+from rag.sql_guard import clean_sql, is_safe_select
 
-# API Token input
-if not st.session_state.huggingface_api_token:
-    with st.form("api_token_form"):
-        api_token = st.text_input("Enter HuggingFace API Token:", type="password")
-        if st.form_submit_button("Submit"):
-            st.session_state.huggingface_api_token = api_token
-            os.environ["HUGGINGFACEHUB_API_TOKEN"] = api_token
+load_dotenv()
 
-# Only show the main app if API token is set
-if st.session_state.huggingface_api_token:
-    # Database connection
-    @st.cache_resource
-    def init_db():
-        return SQLDatabase.from_uri('mysql+mysqlconnector://newuser@localhost:3306/protein_db_small')
-
-    # LLM setup
-    @st.cache_resource
-    
-    def init_llms():
-        # HuggingFace model
-        model_path = r"E:\LLM\models\unsloth\Llama-3.2-3B-Instruct-GGUF\Llama-3.2-3B-Instruct-Q8_0.gguf"
-        llm_hf = HuggingFaceEndpoint(
-            repo_id="mistralai/Mistral-7B-Instruct-v0.2",
-            max_length=256,
-            temperature=0.5,
-            huggingfacehub_api_token=st.session_state.huggingface_api_token,
-        )
-        
-
-        #model_path = r"E:\LLM\models\harikarthikv\ibs_GGUF\unsloth.Q8_0.gguf"
-        
-        llm_local = LlamaCpp(
-            model_path=model_path, 
-            temperature=0.5,
-            max_tokens=1024,
-            n_ctx=16384,
-            n_gpu_layers=1,
-            verbose=True,
-        )
-        
-        return llm_hf, llm_local
-
-    # Initialize components
-    db = init_db()
-    llm_hf, llm_local = init_llms()
-
-    def get_schema(_):
-        return db.get_table_info()
-
-    # Setup chains
-    sql_prompt = ChatPromptTemplate.from_template("""
-    Based on the table schema below, write sql query that would answer the user's question and don't give any description only the sql query:
-    {schema}
-
-    Question:{question}
-    SQL Query:
-    """)
-
-    response_prompt = ChatPromptTemplate.from_template("""
-    You are a precise and knowledgeable protein database expert. 
-    Your task is to generate a natural language response that:
-    1. Stays within 100 words.
-    2. Includes only relevant protein information.
-    3. Uses accurate scientific terminology.
-    4. Avoids speculation, unnecessary details, or elaboration.
-    5. Answers the question directly and succinctly.
-
-    Below are the details for your response:
-
-    Table Schema:
-    {schema}
-
-    Original Question:
-    {question}
-
-    SQL Query Executed:
-    {query}
-
-    Query Result:
-    {response}
-
-    Please provide your response:
-""")
-
-    # Setup chains
-    sql_chain = (
-        RunnablePassthrough.assign(schema=get_schema)
-        | sql_prompt
-        | llm_hf.bind(stop=["\nSQL Result:"])
-        | StrOutputParser()
+CONFIG_ERROR = None
+if not os.environ.get("GEMINI_API_KEY") or not os.environ.get("DATABASE_URL"):
+    CONFIG_ERROR = (
+        "Missing configuration. Set GEMINI_API_KEY and DATABASE_URL as environment "
+        "variables (a local .env file, or HF Space secrets in production)."
     )
 
-    def run_query(query):
-        return db.run(query)
+SCHEMA = get_schema()
 
-    full_chain = (
-        RunnablePassthrough.assign(query=sql_chain).assign(
-            schema=get_schema,
-            response=lambda variables: run_query(variables["query"])
+
+@spaces.GPU
+def answer_question(question: str):
+    """This Space was created on ZeroGPU hardware, which requires at least one
+    @spaces.GPU-decorated function to start - this app makes no actual GPU
+    calls (it's a Gemini + Postgres API proxy), so the decorator is a no-op
+    here purely to satisfy that platform requirement."""
+    if CONFIG_ERROR:
+        return CONFIG_ERROR, "", pd.DataFrame()
+    if not question or not question.strip():
+        return "Please enter a question.", "", pd.DataFrame()
+
+    try:
+        sql_query = clean_sql(generate_sql(question, SCHEMA))
+    except Exception as e:
+        return f"Failed to generate SQL: {e}", "", pd.DataFrame()
+
+    if not is_safe_select(sql_query):
+        return (
+            "The generated query isn't a safe read-only SELECT, so it wasn't run. "
+            "Try rephrasing your question.",
+            sql_query,
+            pd.DataFrame(),
         )
-        | response_prompt
-        | llm_local
+
+    try:
+        rows = run_select(sql_query)
+        answer = generate_answer(question, sql_query, rows)
+    except Exception as e:
+        return f"An error occurred: {e}", sql_query, pd.DataFrame()
+
+    return answer, sql_query, pd.DataFrame(rows)
+
+
+with gr.Blocks(title="Protein Database Query System") as demo:
+    gr.Markdown(
+        "# Protein Database Query System\n"
+        "Ask a natural-language question; it's translated to SQL and run against a "
+        "UniProt-derived Postgres database."
     )
+    if CONFIG_ERROR:
+        gr.Markdown(f"⚠️ **{CONFIG_ERROR}**")
 
-    # Streamlit UI for query input
-    st.subheader("Ask a question about proteins")
-    user_question = st.text_area("Enter your question:", height=100)
+    question_box = gr.Textbox(label="Enter your question", lines=3)
+    submit_btn = gr.Button("Get Answer", variant="primary")
+    answer_box = gr.Textbox(label="Answer", interactive=False)
 
-    if st.button("Get Answer"):
-        if user_question:
-            with st.spinner("Processing your question..."):
-                try:
-                    sql_query = sql_chain.invoke({"question": user_question})
-                    
-                    with st.expander("View SQL Query"):
-                        st.code(sql_query, language="sql")
-                    
-                    response = full_chain.invoke({"question": user_question})
-                    
-                    st.success("Response:")
-                    st.write(response)
-                    
-                except Exception as e:
-                    st.error(f"An error occurred: {str(e)}")
-        else:
-            st.warning("Please enter a question.")
+    with gr.Accordion("View generated SQL", open=False):
+        sql_box = gr.Code(label="SQL", language="sql", interactive=False)
 
-else:
-    st.warning("Please enter your HuggingFace API token to continue.") 
+    result_table = gr.Dataframe(label="Raw query result")
+
+    outputs = [answer_box, sql_box, result_table]
+    submit_btn.click(answer_question, inputs=question_box, outputs=outputs)
+    question_box.submit(answer_question, inputs=question_box, outputs=outputs)
+
+if __name__ == "__main__":
+    demo.launch()

@@ -1,0 +1,350 @@
+ID   MENC_SALTY              Reviewed;         320 AA.
+AC   P58486;
+DT   19-DEC-2001, integrated into UniProtKB/Swiss-Prot.
+DT   19-DEC-2001, sequence version 1.
+DT   10-JUN-2026, entry version 142.
+DE   RecName: Full=o-succinylbenzoate synthase {ECO:0000255|HAMAP-Rule:MF_00470};
+DE            Short=OSB synthase {ECO:0000255|HAMAP-Rule:MF_00470};
+DE            Short=OSBS {ECO:0000255|HAMAP-Rule:MF_00470};
+DE            EC=4.2.1.113 {ECO:0000255|HAMAP-Rule:MF_00470};
+DE   AltName: Full=4-(2'-carboxyphenyl)-4-oxybutyric acid synthase {ECO:0000255|HAMAP-Rule:MF_00470};
+DE   AltName: Full=o-succinylbenzoic acid synthase {ECO:0000255|HAMAP-Rule:MF_00470};
+GN   Name=menC {ECO:0000255|HAMAP-Rule:MF_00470};
+GN   OrderedLocusNames=STM2306;
+OS   Salmonella typhimurium (strain LT2 / SGSC1412 / ATCC 700720).
+OC   Bacteria; Pseudomonadati; Pseudomonadota; Gammaproteobacteria;
+OC   Enterobacterales; Enterobacteriaceae; Salmonella.
+OX   NCBI_TaxID=99287;
+CC   -!- FUNCTION: Converts 2-succinyl-6-hydroxy-2,4-cyclohexadiene-1-
+CC       carboxylate (SHCHC) to 2-succinylbenzoate (OSB). {ECO:0000255|HAMAP-
+CC       Rule:MF_00470}.
+CC   -!- CATALYTIC ACTIVITY:
+CC       Reaction=(1R,6R)-6-hydroxy-2-succinyl-cyclohexa-2,4-diene-1-carboxylate
+CC         = 2-succinylbenzoate + H2O; Xref=Rhea:RHEA:10196, ChEBI:CHEBI:15377,
+CC         ChEBI:CHEBI:18325, ChEBI:CHEBI:58689; EC=4.2.1.113;
+CC         Evidence={ECO:0000255|HAMAP-Rule:MF_00470};
+CC   -!- COFACTOR:
+CC       Name=a divalent metal cation; Xref=ChEBI:CHEBI:60240;
+CC         Evidence={ECO:0000255|HAMAP-Rule:MF_00470};
+CC   -!- PATHWAY: Quinol/quinone metabolism; 1,4-dihydroxy-2-naphthoate
+CC       biosynthesis; 1,4-dihydroxy-2-naphthoate from chorismate: step 4/7.
+CC       {ECO:0000255|HAMAP-Rule:MF_00470}.
+CC   -!- PATHWAY: Quinol/quinone metabolism; menaquinone biosynthesis.
+CC       {ECO:0000255|HAMAP-Rule:MF_00470}.
+CC   -!- SIMILARITY: Belongs to the mandelate racemase/muconate lactonizing
+CC       enzyme family. MenC type 1 subfamily. {ECO:0000255|HAMAP-
+CC       Rule:MF_00470}.
+CC   ---------------------------------------------------------------------------
+CC   Copyrighted by the UniProt Consortium, see https://www.uniprot.org/terms
+CC   Distributed under the Creative Commons Attribution (CC BY 4.0) License
+CC   ---------------------------------------------------------------------------
+PE   1: Evidence at protein level;
+KW   3D-structure; Lyase; Magnesium; Menaquinone biosynthesis; Metal-binding;
+KW   Reference proteome.
+FT   CHAIN           1..320
+FT                   /note="o-succinylbenzoate synthase"
+FT                   /id="PRO_0000171275"
+FT   ACT_SITE        133
+FT                   /note="Proton donor"
+FT                   /evidence="ECO:0000255|HAMAP-Rule:MF_00470"
+FT   ACT_SITE        235
+FT                   /note="Proton acceptor"
+FT                   /evidence="ECO:0000255|HAMAP-Rule:MF_00470"
+FT   BINDING         161
+FT                   /ligand="Mg(2+)"
+FT                   /ligand_id="ChEBI:CHEBI:18420"
+FT                   /evidence="ECO:0000255|HAMAP-Rule:MF_00470"
+FT   BINDING         190
+FT                   /ligand="Mg(2+)"
+FT                   /ligand_id="ChEBI:CHEBI:18420"
+FT                   /evidence="ECO:0000255|HAMAP-Rule:MF_00470"
+FT   BINDING         213
+FT                   /ligand="Mg(2+)"
+FT                   /ligand_id="ChEBI:CHEBI:18420"
+FT                   /evidence="ECO:0000255|HAMAP-Rule:MF_00470"
+SQ   SEQUENCE   320 AA;  35360 MW;  C88260F7A06C2FD8 CRC64;
+     MRSAQVYRWQ IPMDAGVVLR DRRLKTRDGL YVCLRDGERE GWGEISPLPG FSQETWEEAQ
+     TALLTWVNDW LQGSEGLPEM PSVAFGASCA LAELTGVLPE AADYRAAPLC TGDPDDLVLR
+     LADMPGEKIA KVKVGLYEAV RDGMVVNLLL EAIPDLHLRL DANRAWTPLK AQQFAKYVNP
+     DYRARIAFLE EPCKTRDDSR AFARETGIAI AWDESLREAD FTFEAEEGVR AVVIKPTLTG
+     SLDKVREQVA AAHALGLTAV ISSSIESSLG LTQLARIAAW LTPGTLPGLD TLHLMQAQQI
+     RPWPGSALPC LKREELERLL
+//
+ID   INS_HUMAN               Reviewed;         110 AA.
+AC   P01308; Q5EEX2;
+DT   21-JUL-1986, integrated into UniProtKB/Swiss-Prot.
+DT   21-JUL-1986, sequence version 1.
+DT   10-JUN-2026, entry version 283.
+DE   RecName: Full=Insulin;
+DE   Contains:
+DE     RecName: Full=Insulin B chain;
+DE   Contains:
+DE     RecName: Full=Insulin A chain;
+DE   Flags: Precursor;
+GN   Name=INS;
+OS   Homo sapiens (Human).
+OC   Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi; Mammalia;
+OC   Eutheria; Euarchontoglires; Primates; Haplorrhini; Catarrhini; Hominidae;
+OC   Homo.
+OX   NCBI_TaxID=9606;
+CC   -!- FUNCTION: Insulin decreases blood glucose concentration. It increases
+CC       cell permeability to monosaccharides, amino acids and fatty acids. It
+CC       accelerates glycolysis, the pentose phosphate cycle, and glycogen
+CC       synthesis in liver.
+CC   -!- SUBUNIT: Heterodimer of a B chain and an A chain linked by two
+CC       disulfide bonds (PubMed:25423173). {ECO:0000269|PubMed:25423173}.
+CC   -!- INTERACTION:
+CC       P01308; Q6UY14-3: ADAMTSL4; NbExp=3; IntAct=EBI-7090529, EBI-10173507;
+CC       P01308; A8MQ03: CYSRT1; NbExp=3; IntAct=EBI-7090529, EBI-3867333;
+CC       P01308; P14735-1: IDE; NbExp=3; IntAct=EBI-7090529, EBI-15607031;
+CC       P01308; P01308: INS; NbExp=19; IntAct=EBI-7090529, EBI-7090529;
+CC       P01308; P06213-2: INSR; NbExp=6; IntAct=EBI-7090529, EBI-9984921;
+CC       P01308; Q07627: KRTAP1-1; NbExp=3; IntAct=EBI-7090529, EBI-11959885;
+CC       P01308; Q8IUG1: KRTAP1-3; NbExp=3; IntAct=EBI-7090529, EBI-11749135;
+CC       P01308; P0DPK4: NOTCH2NLC; NbExp=3; IntAct=EBI-7090529, EBI-22310682;
+CC       PRO_0000015820; P11142: HSPA8; NbExp=2; IntAct=EBI-20765227, EBI-351896;
+CC   -!- SUBCELLULAR LOCATION: Secreted {ECO:0000269|PubMed:36309486}.
+CC   -!- ALTERNATIVE PRODUCTS:
+CC       Event=Alternative splicing; Named isoforms=2;
+CC       Name=1;
+CC         IsoId=P01308-1; Sequence=Displayed;
+CC       Name=2; Synonyms=INS-IGF2;
+CC         IsoId=F8WCM5-1; Sequence=External;
+CC   -!- TISSUE SPECIFICITY: Expressed by pancreatic beta-cells (at protein
+CC       level). {ECO:0000269|PubMed:36309486}.
+CC   -!- DISEASE: Hyperproinsulinemia (HPRI) [MIM:616214]: An autosomal dominant
+CC       condition characterized by elevated levels of serum proinsulin-like
+CC       material. {ECO:0000269|PubMed:1601997, ECO:0000269|PubMed:2196279,
+CC       ECO:0000269|PubMed:3470784, ECO:0000269|PubMed:4019786,
+CC       ECO:0000269|PubMed:6312455, ECO:0000269|PubMed:6424111,
+CC       ECO:0000269|PubMed:8421693}. Note=The disease is caused by variants
+CC       affecting the gene represented in this entry.
+CC   -!- DISEASE: Type 1 diabetes mellitus 2 (T1D2) [MIM:125852]: A
+CC       multifactorial disorder of glucose homeostasis that is characterized by
+CC       susceptibility to ketoacidosis in the absence of insulin therapy.
+CC       Clinical features are polydipsia, polyphagia and polyuria which result
+CC       from hyperglycemia-induced osmotic diuresis and secondary thirst. These
+CC       derangements result in long-term complications that affect the eyes,
+CC       kidneys, nerves, and blood vessels. {ECO:0000269|PubMed:18192540}.
+CC       Note=The disease is caused by variants affecting the gene represented
+CC       in this entry.
+CC   -!- DISEASE: Diabetes mellitus, permanent neonatal, 4 (PNDM4) [MIM:618858]:
+CC       A form of permanent neonatal diabetes mellitus, a type of diabetes
+CC       characterized by onset of persistent hyperglycemia within the first six
+CC       months of life. Initial clinical manifestations include intrauterine
+CC       growth retardation, hyperglycemia, glycosuria, osmotic polyuria, severe
+CC       dehydration, and failure to thrive. PNDM4 transmission pattern is
+CC       consistent with autosomal dominant or autosomal recessive inheritance.
+CC       {ECO:0000269|PubMed:17855560, ECO:0000269|PubMed:18162506}. Note=The
+CC       disease is caused by variants affecting the gene represented in this
+CC       entry.
+CC   -!- DISEASE: Maturity-onset diabetes of the young 10 (MODY10) [MIM:613370]:
+CC       A form of diabetes that is characterized by an autosomal dominant mode
+CC       of inheritance, onset in childhood or early adulthood (usually before
+CC       25 years of age), a primary defect in insulin secretion and frequent
+CC       insulin-independence at the beginning of the disease.
+CC       {ECO:0000269|PubMed:18162506, ECO:0000269|PubMed:18192540,
+CC       ECO:0000269|PubMed:20226046, ECO:0000269|PubMed:25423173}. Note=The
+CC       disease is caused by variants affecting the gene represented in this
+CC       entry.
+CC   -!- PHARMACEUTICAL: Available under the names Humulin or Humalog (Eli
+CC       Lilly) and Novolin (Novo Nordisk). Used in the treatment of diabetes.
+CC       Humalog is an insulin analog with 52-Lys-Pro-53 instead of 52-Pro-Lys-
+CC       53.
+CC   -!- SIMILARITY: Belongs to the insulin family. {ECO:0000305}.
+CC   -!- SEQUENCE CAUTION:
+CC       Sequence=AAA59179.1; Type=Erroneous gene model prediction; Evidence={ECO:0000305};
+CC   -!- WEB RESOURCE: Name=Protein Spotlight; Note=Protein of the 20th century
+CC       - Issue 9 of April 2001;
+CC       URL="https://www.proteinspotlight.org/back_issues/009";
+CC   -!- WEB RESOURCE: Name=Wikipedia; Note=Insulin entry;
+CC       URL="https://en.wikipedia.org/wiki/Insulin";
+CC   ---------------------------------------------------------------------------
+CC   Copyrighted by the UniProt Consortium, see https://www.uniprot.org/terms
+CC   Distributed under the Creative Commons Attribution (CC BY 4.0) License
+CC   ---------------------------------------------------------------------------
+PE   1: Evidence at protein level;
+KW   3D-structure; Alternative splicing; Carbohydrate metabolism;
+KW   Cleavage on pair of basic residues; Diabetes mellitus;
+KW   Direct protein sequencing; Disease variant; Disulfide bond;
+KW   Glucose metabolism; Hormone; Pharmaceutical; Proteomics identification;
+KW   Reference proteome; Secreted; Signal.
+SQ   SEQUENCE   110 AA;  11981 MW;  C2C3B23B85E520E5 CRC64;
+     MALWMRLLPL LALLALWGPD PAAAFVNQHL CGSHLVEALY LVCGERGFFY TPKTRREAED
+     LQVGQVELGG GPGAGSLQPL ALEGSLQKRG IVEQCCTSIC SLYQLENYCN
+//
+ID   HBB_HUMAN               Reviewed;         147 AA.
+AC   P68871; A4GX73; B2ZUE0; P02023; Q13852; Q14481; Q14510; Q45KT0; Q549N7;
+AC   Q6FI08; Q6R7N2; Q8IZI1; Q9BX96; Q9UCD6; Q9UCP8; Q9UCP9;
+DT   21-JUL-1986, integrated into UniProtKB/Swiss-Prot.
+DT   23-JAN-2007, sequence version 2.
+DT   10-JUN-2026, entry version 218.
+DE   RecName: Full=Hemoglobin subunit beta;
+DE   AltName: Full=Beta-globin;
+DE   AltName: Full=Hemoglobin beta chain;
+DE   Contains:
+DE     RecName: Full=LVV-hemorphin-7;
+DE   Contains:
+DE     RecName: Full=Spinorphin;
+GN   Name=HBB;
+OS   Homo sapiens (Human).
+OC   Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi; Mammalia;
+OC   Eutheria; Euarchontoglires; Primates; Haplorrhini; Catarrhini; Hominidae;
+OC   Homo.
+OX   NCBI_TaxID=9606;
+CC   -!- FUNCTION: Involved in oxygen transport from the lung to the various
+CC       peripheral tissues. {ECO:0000269|PubMed:28066926}.
+CC   -!- FUNCTION: LVV-hemorphin-7 potentiates the activity of bradykinin,
+CC       causing a decrease in blood pressure.
+CC   -!- FUNCTION: [Spinorphin]: Functions as an endogenous inhibitor of
+CC       enkephalin-degrading enzymes such as DPP3, and as a selective
+CC       antagonist of the P2RX3 receptor which is involved in pain signaling,
+CC       these properties implicate it as a regulator of pain and inflammation.
+CC   -!- SUBUNIT: Heterotetramer of two alpha chains and two beta chains in
+CC       adult hemoglobin A (HbA). Heterotetramer of two zeta chains and two
+CC       beta chains in hemoglobin Portland-2, detected in fetuses and neonates
+CC       with homozygous alpha-thalassemia. {ECO:0000269|PubMed:11747442,
+CC       ECO:0000269|PubMed:24100324, ECO:0000269|PubMed:6539334}.
+CC   -!- INTERACTION:
+CC       P68871; Q9ULK0: GRID1; NbExp=2; IntAct=EBI-715554, EBI-17496373;
+CC       P68871; P69905: HBA2; NbExp=32; IntAct=EBI-715554, EBI-714680;
+CC       P68871; Q6B0K9: HBM; NbExp=3; IntAct=EBI-715554, EBI-12805802;
+CC       P68871; P09105: HBQ1; NbExp=3; IntAct=EBI-715554, EBI-10193656;
+CC       P68871; P02008: HBZ; NbExp=7; IntAct=EBI-715554, EBI-719843;
+CC   -!- TISSUE SPECIFICITY: Red blood cells. {ECO:0000269|PubMed:6539334}.
+CC   -!- PTM: Glucose reacts non-enzymatically with the N-terminus of the beta
+CC       chain to form a stable ketoamine linkage. This takes place slowly and
+CC       continuously throughout the 120-day life span of the red blood cell.
+CC       The rate of glycation is increased in patients with diabetes mellitus.
+CC   -!- PTM: S-nitrosylated; a nitric oxide group is first bound to Fe(2+) and
+CC       then transferred to Cys-94 to allow capture of O(2).
+CC       {ECO:0000269|PubMed:1520632, ECO:0000269|PubMed:8637569,
+CC       ECO:0000269|PubMed:9843411}.
+CC   -!- PTM: Acetylated on Lys-60, Lys-83 and Lys-145 upon aspirin exposure.
+CC       {ECO:0000269|PubMed:4531009}.
+CC   -!- MASS SPECTROMETRY: [LVV-hemorphin-7]: Mass=1310; Method=FAB;
+CC       Evidence={ECO:0000269|PubMed:1575724};
+CC   -!- POLYMORPHISM: Genetic variations in HBB are involved in resistance to
+CC       malaria [MIM:611162]. Hemoglobin S (Hb S), which at homozygosity is
+CC       responsible for sickle cell anemia, is not associated with any clinical
+CC       abnormality when heterozygous. At heterozygosity, Hb S confers an
+CC       increase in protection from life-threatening malaria. Additional
+CC       variants conferring resistance against severe malaria are hemoglobin C
+CC       (Hb C) and hemoglobin E (Hb E). {ECO:0000269|PubMed:11001883,
+CC       ECO:0000269|PubMed:12149194, ECO:0000269|PubMed:16001361}.
+CC   -!- DISEASE: Heinz body anemias (HEIBAN) [MIM:140700]: Form of non-
+CC       spherocytic hemolytic anemia of Dacie type 1. After splenectomy, which
+CC       has little benefit, basophilic inclusions called Heinz bodies are
+CC       demonstrable in the erythrocytes. Before splenectomy, diffuse or
+CC       punctate basophilia may be evident. Most of these cases are probably
+CC       instances of hemoglobinopathy. The hemoglobin demonstrates heat
+CC       lability. Heinz bodies are observed also with the Ivemark syndrome
+CC       (asplenia with cardiovascular anomalies) and with glutathione
+CC       peroxidase deficiency. {ECO:0000269|PubMed:186485,
+CC       ECO:0000269|PubMed:2599881, ECO:0000269|PubMed:6259091,
+CC       ECO:0000269|PubMed:8704193}. Note=The disease may be caused by variants
+CC       affecting the gene represented in this entry.
+CC   -!- DISEASE: Beta-thalassemia (B-THAL) [MIM:613985]: A form of thalassemia.
+CC       Thalassemias are common monogenic diseases occurring mostly in
+CC       Mediterranean and Southeast Asian populations. The hallmark of beta-
+CC       thalassemia is an imbalance in globin-chain production in the adult HbA
+CC       molecule. Absence of beta chain causes beta(0)-thalassemia, while
+CC       reduced amounts of detectable beta globin causes beta(+)-thalassemia.
+CC       In the severe forms of beta-thalassemia, the excess alpha globin chains
+CC       accumulate in the developing erythroid precursors in the marrow. Their
+CC       deposition leads to a vast increase in erythroid apoptosis that in turn
+CC       causes ineffective erythropoiesis and severe microcytic hypochromic
+CC       anemia. Clinically, beta-thalassemia is divided into thalassemia major
+CC       which is transfusion dependent, thalassemia intermedia (of intermediate
+CC       severity), and thalassemia minor that is asymptomatic.
+CC       {ECO:0000269|PubMed:12144064, ECO:0000269|PubMed:12149194,
+CC       ECO:0000269|PubMed:15481886, ECO:0000269|PubMed:2399911,
+CC       ECO:0000269|PubMed:6166632, ECO:0000269|PubMed:7693620}. Note=The
+CC       disease is caused by variants affecting the gene represented in this
+CC       entry.
+CC   -!- DISEASE: Sickle cell disease (SKCA) [MIM:603903]: Characterized by
+CC       abnormally shaped red cells resulting in chronic anemia and periodic
+CC       episodes of pain, serious infections and damage to vital organs. Normal
+CC       red blood cells are round and flexible and flow easily through blood
+CC       vessels, but in sickle cell anemia, the abnormal hemoglobin (called Hb
+CC       S) causes red blood cells to become stiff. They are C-shaped and
+CC       resemble a sickle. These stiffer red blood cells can lead to
+CC       microvascular occlusion thus cutting off the blood supply to nearby
+CC       tissues. {ECO:0000269|PubMed:1195378, ECO:0000269|PubMed:13464827,
+CC       ECO:0000269|PubMed:16001361, ECO:0000269|PubMed:24100324,
+CC       ECO:0000269|Ref.10}. Note=The disease is caused by variants affecting
+CC       the gene represented in this entry.
+CC   -!- DISEASE: Beta-thalassemia, dominant, inclusion body type (B-THALIB)
+CC       [MIM:603902]: An autosomal dominant form of beta thalassemia
+CC       characterized by moderate anemia, lifelong jaundice, cholelithiasis and
+CC       splenomegaly, marked morphologic changes in the red cells, erythroid
+CC       hyperplasia of the bone marrow with increased numbers of multinucleate
+CC       red cell precursors, and the presence of large inclusion bodies in the
+CC       normoblasts, both in the marrow and in the peripheral blood after
+CC       splenectomy. {ECO:0000269|PubMed:1971109}. Note=The disease is caused
+CC       by variants affecting the gene represented in this entry.
+CC   -!- MISCELLANEOUS: One molecule of 2,3-bisphosphoglycerate can bind to two
+CC       beta chains per hemoglobin tetramer.
+CC   -!- SIMILARITY: Belongs to the globin family. {ECO:0000255|PROSITE-
+CC       ProRule:PRU00238}.
+CC   -!- CAUTION: The modification form of Leu-142 is subject of controversy and
+CC       could be the artifactual result of sample handling.
+CC       {ECO:0000305|PubMed:1520632}.
+CC   -!- CAUTION: It is unclear if hemoglobin Beckman (Hb Beckman) is defined by
+CC       p.Ala136Glu or p.Ala136Asp. Hb Beckman has been originally identified
+CC       by reverse phase-HPLC and tandem mass spectrometry, and has been
+CC       reported as variant p.Ala136Glu (Ref.140). Subsequently, variant
+CC       p.Ala136Asp has been reported based on HBB gene complete sequencing
+CC       results (PubMed:19453576). Variant p.Ala136Asp has also been detected
+CC       by mass spectrometry (PubMed:26209877). Although the name Hb Beckman is
+CC       currently used for variant p.Ala136Asp, it cannot be ruled out that Hb
+CC       Beckman is indeed variant p.Ala136Glu (PubMed:19453576).
+CC       {ECO:0000269|PubMed:19453576, ECO:0000269|PubMed:26209877,
+CC       ECO:0000269|Ref.140, ECO:0000303|PubMed:19453576}.
+CC   -!- WEB RESOURCE: Name=HbVar; Note=Human hemoglobin variants and
+CC       thalassemias;
+CC       URL="https://globin.bx.psu.edu/cgi-bin/hbvar/query_vars3?mode=directlink&gene=HBB";
+CC   -!- WEB RESOURCE: Name=Wikipedia; Note=Hemoglobin entry;
+CC       URL="https://en.wikipedia.org/wiki/Hemoglobin";
+CC   ---------------------------------------------------------------------------
+CC   Copyrighted by the UniProt Consortium, see https://www.uniprot.org/terms
+CC   Distributed under the Creative Commons Attribution (CC BY 4.0) License
+CC   ---------------------------------------------------------------------------
+PE   1: Evidence at protein level;
+KW   3D-structure; Acetylation; Congenital dyserythropoietic anemia;
+KW   Direct protein sequencing; Disease variant; Glycation; Glycoprotein; Heme;
+KW   Hereditary hemolytic anemia; Hypotensive agent; Iron; Metal-binding;
+KW   Oxygen transport; Phosphoprotein; Proteomics identification; Pyruvate;
+KW   Reference proteome; S-nitrosylation; Transport; Vasoactive.
+FT   CHAIN           2..147
+FT                   /note="Hemoglobin subunit beta"
+FT                   /id="PRO_0000052976"
+FT   BINDING         2
+FT                   /ligand="(2R)-2,3-bisphosphoglycerate"
+FT                   /ligand_id="ChEBI:CHEBI:58248"
+FT   BINDING         3
+FT                   /ligand="(2R)-2,3-bisphosphoglycerate"
+FT                   /ligand_id="ChEBI:CHEBI:58248"
+FT   BINDING         64
+FT                   /ligand="heme b"
+FT                   /ligand_id="ChEBI:CHEBI:60344"
+FT                   /ligand_part="Fe"
+FT                   /ligand_part_id="ChEBI:CHEBI:18248"
+FT                   /note="distal binding residue"
+FT   BINDING         83
+FT                   /ligand="(2R)-2,3-bisphosphoglycerate"
+FT                   /ligand_id="ChEBI:CHEBI:58248"
+FT   BINDING         93
+FT                   /ligand="heme b"
+FT                   /ligand_id="ChEBI:CHEBI:60344"
+FT                   /ligand_part="Fe"
+FT                   /ligand_part_id="ChEBI:CHEBI:18248"
+FT                   /note="proximal binding residue"
+FT   BINDING         144
+FT                   /ligand="(2R)-2,3-bisphosphoglycerate"
+FT                   /ligand_id="ChEBI:CHEBI:58248"
+SQ   SEQUENCE   147 AA;  15998 MW;  A31F6D621C6556A1 CRC64;
+     MVHLTPEEKS AVTALWGKVN VDEVGGEALG RLLVVYPWTQ RFFESFGDLS TPDAVMGNPK
+     VKAHGKKVLG AFSDGLAHLD NLKGTFATLS ELHCDKLHVD PENFRLLGNV LVCVLAHHFG
+     KEFTPPVQAA YQKVVAGVAN ALAHKYH
+//
